@@ -34,8 +34,10 @@ images.forEach(image => {
 const splashScreen = document.getElementById('splash-screen');
 const enterImage = document.getElementById('enter-image');
 const mainContent = document.getElementById('main-content');
+const backgroundMusic = document.getElementById('background-music'); // Audio element
 
 enterImage.addEventListener('click', () => {
     splashScreen.style.display = 'none'; // Hide splash screen
     mainContent.style.display = 'block'; // Show main content
+    backgroundMusic.play(); // Start playing the background music
 });
