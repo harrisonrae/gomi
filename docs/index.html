@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+
+     <!-- Fullscreen Background Video -->
+     <video autoplay muted loop id="background-video">
+        <source src="media/IMG_5357.mov" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <!-- Splash screen with a clickable image -->
     <div id="splash-screen">
         <img src="media/gomi.png" alt="Click to Enter" id="enter-image">
@@ -14,11 +22,25 @@
     
     <!-- Image elements (main content) -->
     <div class="image-container" id="main-content">
-        <img src="media/flower.jpg" class="floating-image" alt="Floating Image 1">
-        <img src="media/194622B6-053C-4DF8-8C7C-CACE23DDCD31.JPG" class="floating-image" alt="Floating Image 2">
-        <img src="media/4A28C7CB-13C9-4478-9A2B-29A5A0F35451.JPG" class="floating-image" alt="Floating Image 3">
+        <img src="media/brownflag.png" class="floating-image" alt="Floating Image 1">
+        <img src="media/mandatsue.png" class="floating-image" alt="Floating Image 2">
+        <img src="media/lotto.png" class="floating-image" alt="Floating Image 3">
         <img src="media/C24B7E5A-B13B-4316-8DA9-13E247D55A4E.JPG" class="floating-image" alt="Floating Image 4">
     </div>
+
+       <!-- Image carousel (initially hidden) -->
+       <div id="carousel" class="carousel">
+        <div class="carousel-track">
+            <img src="media/flower.jpg" class="carousel-image" alt="Carousel Image 1">
+            <img src="media/194622B6-053C-4DF8-8C7C-CACE23DDCD31.JPG" class="carousel-image" alt="Carousel Image 2">
+            <img src="media/4A28C7CB-13C9-4478-9A2B-29A5A0F35451.JPG" class="carousel-image" alt="Carousel Image 3">
+            <img src="media/C24B7E5A-B13B-4316-8DA9-13E247D55A4E.JPG" class="carousel-image" alt="Carousel Image 4">
+        </div>
+        <button id="carousel-prev" class="carousel-button prev">&#10094;</button>
+        <button id="carousel-next" class="carousel-button next">&#10095;</button>
+
+     <!-- Button to see works -->
+     <button id="see-works-button">See Works</button>
 
     <!-- Audio player (hidden) -->
     <audio id="background-music" src="media/edelveiss.mp3" preload="auto"></audio>

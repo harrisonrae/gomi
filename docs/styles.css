@@ -6,13 +6,22 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('media/background.jpg'); /* Replace with your custom background */
-    background-size: cover;
-    background-position: center;
+  
     overflow: hidden; /* No scrollbars */
 
     
 }
+/* Fullscreen background video */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Makes the video cover the screen */
+    z-index: -1; /* Places video behind everything */
+}
+
 
 /* Splash screen styles */
 #splash-screen {
@@ -28,7 +37,7 @@ body {
 }
 
 #enter-image {
-    width: 50%;
+    width: 20%;
     max-width: 600px;
     border-radius: 15px;
     cursor: pointer;
@@ -53,19 +62,87 @@ h1 {
 .image-container {
     position: relative;
     width: 100%;
-    height: 50vh; /* Only occupy the top half of the screen */
+    height: 100vh; /* Only occupy the top half of the screen */
     overflow: hidden;
 }
+
+/* See Works Button Styles */
+#see-works-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #ff6347; /* Tomato color */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 1000; /* Ensures it stays above other content */
+}
+
+#see-works-button:hover {
+    background-color: #ff4500; /* Darker shade on hover */
+    transform: scale(1.05); /* Slight pop-out effect */
+}
+
+#see-works-button:active {
+    background-color: #c0392b; /* Even darker shade on click */
+    transform: scale(0.95); /* Click-in effect */
+}
+
 
 .floating-image {
     position: absolute;
     width: 100px;
     height: 100px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    
     object-fit: cover;
-    animation: float 10s infinite linear;
+    animation: float 20s infinite linear;
 }
+/* General Carousel Styles */
+#carousel {
+    display: none; /* Hidden initially */
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Fullscreen height */
+    overflow: hidden;
+    background-color: #000; /* Black background in case video doesn't load */
+    z-index: 10; /* Ensure it's above the background video */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* Ensures the image covers the entire screen */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px 20px;
+    z-index: 20; /* Above the images */
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(255, 255, 255, 0
+    )}
+
 
 @keyframes float {
     0% { transform: translateY(0px); }
